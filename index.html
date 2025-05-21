@@ -1,69 +1,55 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>INOVA LOOK</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inova Look</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="top-header">
-    <nav class="navbar">
-      <div class="logo">INOVA LOOK</div>
-      <div class="menu-icons">
-        <button class="menu-btn">☰</button>
-        <input type="text" placeholder="Buscar..." class="search-box">
-        <button class="icon">🛒</button>
-        <button class="icon">❤️</button>
-        <button class="icon">👤</button>
-      </div>
+  <header>
+    <h1>Inova Look</h1>
+    <nav>
+      <a href="#masculino">Masculino</a>
+      <a href="#feminino">Feminino</a>
     </nav>
-    <section class="hero">
-      <img src="banner.jpg" alt="Promoção Camisetas e Regatas">
-      <div class="promo-text">
-        <h1>Camisetas e Regatas</h1>
-        <p>A partir de R$39,99</p>
-      </div>
-    </section>
   </header>
 
-  <main>
-    <section class="filters">
-      <button>Masculino</button>
-      <button>Feminino</button>
-      <button>Infantil</button>
-      <button>Novidades</button>
-    </section>
+  <section class="banner">
+    <h2>Moda básica com estilo e conforto</h2>
+  </section>
 
-    <section class="products">
-      <!-- Exemplo de produto -->
-      <div class="product-card">
-        <img src="produto1.jpg" alt="Produto 1">
-        <div class="product-info">
-          <h3>Camiseta Comfort</h3>
-          <p>R$49,99</p>
-        </div>
-        <div class="product-actions">
-          <button class="favorite">❤️</button>
-          <button class="share">🔗</button>
-        </div>
-      </div>
-      <!-- Adicione mais produtos conforme o modelo acima -->
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-content">
-      <div>
-        <p>@inovalook.br</p>
-        <p>0800-000-000</p>
-      </div>
-      <div>
-        <p>suporte@inovalook.com.br</p>
-        <p>www.inovalook.com.br</p>
-      </div>
+  <section class="produtos" id="masculino">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x300?text=Camiseta+Preta" alt="Camiseta Preta">
+      <h3>Camiseta Preta Masculina</h3>
+      <button onclick="adicionarAoCarrinho('Camiseta Preta Masculina')">Adicionar ao carrinho</button>
     </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x300?text=Cal%C3%A7a+Jeans" alt="Calça Jeans">
+      <h3>Calça Jeans Masculina</h3>
+      <button onclick="adicionarAoCarrinho('Calça Jeans Masculina')">Adicionar ao carrinho</button>
+    </div>
+  </section>
+
+  <section class="produtos" id="feminino">
+    <div class="card">
+      <img src="https://via.placeholder.com/250x300?text=Blusa+Branca" alt="Blusa Branca">
+      <h3>Blusa Branca Feminina</h3>
+      <button onclick="adicionarAoCarrinho('Blusa Branca Feminina')">Adicionar ao carrinho</button>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/250x300?text=Saia+Jeans" alt="Saia Jeans">
+      <h3>Saia Jeans Feminina</h3>
+      <button onclick="adicionarAoCarrinho('Saia Jeans Feminina')">Adicionar ao carrinho</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Inova Look. Todos os direitos reservados.
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
