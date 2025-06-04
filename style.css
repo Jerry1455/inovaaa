@@ -97,3 +97,29 @@ footer {
   color: #555;
   font-size: 0.9em;
 }
+
+.preco {
+  font-size: 40px;
+  text-align: left;
+}
+
+.botao1 {
+  font-size: 20px;
+  float:right;
+}
+
+.CamisaPreta {
+  text-align: left;
+}
+
+.card button:hover {
+  background-color: #000;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #eee;
+  color: #555;
+  font-size: 0.9em;
+}
