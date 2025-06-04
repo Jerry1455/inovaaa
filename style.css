@@ -123,8 +123,24 @@ footer {
   color: #555;
   font-size: 0.9em;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.search-box {
+  padding: 10px 300px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  position: absolute;
+  right: 500px;
+
+}
 .card {
-  position: relative; /* Para o botão ser posicionado relativo a esse container */
+  position: relative; 
 }
 
 .favorito-btn {
@@ -135,7 +151,7 @@ footer {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 10; /* Fica na frente */
+  z-index: 10; 
   width: 30px;
   height: 30px;
   display: flex;
@@ -146,6 +162,5 @@ footer {
 .favorito-btn img {
   width: 24px;
   height: 24px;
-  pointer-events: none; /* Para clique ir no botão, não na imagem */
+  pointer-events: none; 
 }
-
