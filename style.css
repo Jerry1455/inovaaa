@@ -123,3 +123,29 @@ footer {
   color: #555;
   font-size: 0.9em;
 }
+.card {
+  position: relative; /* Para o botão ser posicionado relativo a esse container */
+}
+
+.favorito-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10; /* Fica na frente */
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favorito-btn img {
+  width: 24px;
+  height: 24px;
+  pointer-events: none; /* Para clique ir no botão, não na imagem */
+}
+
