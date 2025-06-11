@@ -3,6 +3,9 @@ function adicionarAoCarrinho(produto) {
 }
 
 
+
   function minhaFuncao() {
     alert('Imagem clicada!');
   }
+
+
