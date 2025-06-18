@@ -16,8 +16,8 @@
 
     <nav class="navbar">
  <input type="text" placeholder="Buscar..." class="search-box">
-    <button class="carrinho-btn" onclick="minhaFuncao()">
-  <img src="img(Fotos)/imgCarrinho.png"Botão style="width:40px; height:40px;">
+   <button id="carrinho-btn" class="carrinho-btn">
+  <img src="img(Fotos)/imgCarrinho.png" alt="Carrinho" style="width:40px; height:40px;">
 </button>
 
 
@@ -176,6 +176,17 @@
       botao.setAttribute('data-favorito', 'false');
     }
   }
+  </script>
+  <div id="cart-sidebar" class="cart-closed">
+  <iframe src="(Carrinho)/index.html" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+</div>
+<script>
+  const cartButton = document.getElementById('carrinho-btn');
+  const cartSidebar = document.getElementById('cart-sidebar');
+
+  cartButton.addEventListener('click', () => {
+    cartSidebar.classList.toggle('cart-open');
+  });
 </script>
 </body>
 </html>
