@@ -222,5 +222,69 @@ footer.footer-container {
 }
 
 .final {
-font-size: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  text-align: center;
+   max-width: 1000px;
 }
+
+.avaliacao {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  margin: 5px 0;
+   text-align: left;
+}
+
+.carrossel-container {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  max-width: 10000px;
+  margin: auto;
+  position: relative;
+}
+
+.carrossel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  width: 100px;
+}
+
+.item-carrossel {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s;
+  border: none;
+  outline: none;
+}
+
+.item:hover .item-carrossel {
+  transform: scale(1.05);
+}
+
+.legenda {
+  margin-top: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: #333;
+}
+
+
