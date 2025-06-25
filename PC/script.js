@@ -4,7 +4,6 @@ function adicionarAoCarrinho(produto) {
 
 
 
-<<<<<<< HEAD
   function minhaFuncao() {
     alert('Imagem clicada!');
   }
@@ -19,6 +18,3 @@ function adicionarAoCarrinho(produto) {
     });
   }
 </script>
-=======
- 
->>>>>>> d98a171acd9f7dad16e5485c684f0b2fc1567cd1
