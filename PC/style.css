@@ -221,7 +221,24 @@ footer.footer-container {
   height: auto;
 }
 
+#cart-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 400px;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2); 
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+#cart-sidebar.cart-open {
+  transform: translateX(0); 
+}
 .final {
+<<<<<<< HEAD
   display: flex;
   justify-content: center;
   align-items: center;
@@ -288,3 +305,7 @@ footer.footer-container {
 }
 
 
+=======
+font-size: 7px;
+}
+>>>>>>> d98a171acd9f7dad16e5485c684f0b2fc1567cd1
