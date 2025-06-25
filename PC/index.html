@@ -15,6 +15,11 @@
 
 
     <nav class="navbar">
+      <button id="menu-open-btn" class="menu-btn" aria-label="Abrir menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    </button>
  <input type="text" placeholder="Buscar..." class="search-box">
    <button id="carrinho-btn" class="carrinho-btn">
   <img src="img(Fotos)/imgCarrinho.png" alt="Carrinho" style="width:40px; height:40px;">
@@ -278,6 +283,31 @@
     <img src="img(Fotos)/imgLogo.png" alt="Logo Inova Look" class="footer-image">
   </div>
 </footer>
+  <div id="cart-sidebar" aria-hidden="true">
+    <button id="menu-close-btn" class="menu-btn sidebar-btn" aria-label="Fechar menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+    <nav>
+      <ul>
+        <li><strong>Homens</strong></li>
+        <li><strong>Mulheres</strong></li>
+        <li><strong>Infantil</strong></li>
+        <li>Esportes</li>
+        <li>Casual</li>
+        <li>Acessórios</li>
+        <li>Jaquetas</li>
+        <li>Verão</li>
+        <li>Regata</li>
+        <li>Camisetas</li>
+        <li>Moda</li>
+      </ul>
+    </nav>
+  </div>
+  <div id="overlay"></div>
+
+  <script src="script.js"></script>
 
   <script src="script.js"></script>
   <script>
@@ -294,16 +324,5 @@
       botao.setAttribute('data-favorito', 'false');
     }
   }
-  </script>
-  <div id="cart-sidebar" class="cart-closed">
-</div>
-<script>
-  const cartButton = document.getElementById('carrinho-btn');
-  const cartSidebar = document.getElementById('cart-sidebar');
-
-  cartButton.addEventListener('click', () => {
-    cartSidebar.classList.toggle('cart-open');
-  });
-</script>
 </body>
 </html>
