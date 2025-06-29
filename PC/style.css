@@ -24,7 +24,7 @@ header h1 {
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 10px;
   text-decoration: none;
   color: #555;
   font-weight: 600;
@@ -87,8 +87,8 @@ body, html {
 
 .card button {
   margin-top: 10px;
-  padding: 10px 20px;
-  background-color: #444;
+  padding: 10px 8px;
+  background-color: #191919;
   color: #fff;
   border: none;
   border-radius: 6px;
@@ -97,7 +97,7 @@ body, html {
 }
 
 .card button:hover {
-  background-color: #000;
+  background-color: #000000;
 }
 
 
@@ -118,7 +118,7 @@ body, html {
 }
 
 .card button:hover {
-  background-color: #000;
+  background-color: #000000;
 }
 
 
@@ -127,7 +127,7 @@ display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    text-align: left;
+  
 }
 
 .search-box {
@@ -137,7 +137,7 @@ display: flex;
   border-radius: 20px;
   border: 1px solid #ccc;
   position: absolute;
-  right: 500px;
+  right: 330px;
   text-align: left;
 
 }
@@ -329,6 +329,7 @@ footer.footer-container {
   height: 10vh;
   text-align: center;
    max-width: 1000px;
+     color: rgb(0, 0, 0);
 }
 
 .avaliacao {
@@ -341,7 +342,8 @@ footer.footer-container {
 .carrossel-container {
   align-items: center;
   overflow: hidden;
-  max-width: 10000px;
+  max-width: 100000px;
+   margin-top: -150px;
 }
 
 .carrossel {
@@ -349,7 +351,7 @@ footer.footer-container {
   overflow-x: auto;
   scroll-behavior: smooth;
   gap: 20px;
-  padding: 60px;
+  padding: 20px;
 }
 
 .item {
@@ -368,10 +370,11 @@ footer.footer-container {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform 0.3s;
   border: none;
   outline: none;
+    background-color: #ecf4f4;
 }
 
 .item:hover .item-carrossel {
