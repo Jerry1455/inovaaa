@@ -13,13 +13,13 @@ window.addEventListener('DOMContentLoaded', () => {
       nome: 'Calça Feminina',
       preco: 149.99,
       imagem: 'img-fotos/imgCalçaF.webp',
-      estrelas: 4
+      estrelas: 2
     },
     {
       nome: 'Camisa Branca Masculina',
       preco: 129.99,
       imagem: 'img-fotos/imgCamisaBranca.webp',
-      estrelas: 4
+      estrelas: 5
     }
   ];
 
@@ -37,8 +37,8 @@ window.addEventListener('DOMContentLoaded', () => {
     const desconto = prod.desconto ? `<span class="discount">${prod.desconto}</span>` : '';
 
     card.innerHTML = `
-      <button class="icon-btn share" title="Compartilhar produto">🔗</button>
-      <button class="icon-btn favorite" title="Favoritar">❤</button>
+      <button class="icon-btn share" title="Compartilhar produto"></button>
+      <button class="icon-btn favorite" title="Favoritar"></button>
       <img src="${prod.imagem}" alt="${prod.nome}" />
       <h3>${prod.nome}</h3>
       <div class="rating" role="img">${estrelas}</div>
@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   qs('#continue-btn').addEventListener('click', () => {
-    alert('Voltando para a loja...');
+    window.location.href = '../PC/index.html';
   });
   qs('#checkout-btn').addEventListener('click', () => {
     alert('Compra finalizada com sucesso!');
@@ -122,3 +122,5 @@ window.addEventListener('DOMContentLoaded', () => {
 
   updateTotal();
 });
+
+
