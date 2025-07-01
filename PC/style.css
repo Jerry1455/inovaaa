@@ -222,13 +222,26 @@ footer.footer-container {
   font-size: 18px;
 }
 
+
 .footer-right {
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
-.footer-image {
-  max-width: 250px;
-  height: auto;
+
+  .footer-image {
+  height: 100px; 
+  margin: 0; 
+}
+
+.final {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  text-align: center;
+  max-width: 650px;
+  color: rgb(0, 0, 0);
 }
 
 .menu-btn {
@@ -334,16 +347,7 @@ footer.footer-container {
   display: none;
 }
 
-.final {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 10vh;
-  text-align: center;
-  max-width: 1000px;
-  color: rgb(0, 0, 0);
-  margin: 0 auto;
-}
+
 
 .avaliacao {
   color: rgb(0, 0, 0);
