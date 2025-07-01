@@ -1,0 +1,39 @@
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url('https://via.placeholder.com/1920x1080');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.banner h2 {
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin-top: 40vh;
+}
+
+.titulo-section {
+  font-size: 24px;
+  margin: 30px 0 20px 0;
+  text-align: center;
+  color: #333;
+}
+
+.filtro-preco, .filtro-departamento {
+  text-align: center;
+  margin: 20px 0;
+}

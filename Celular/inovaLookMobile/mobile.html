@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inova Look</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="componentes/header.css" />
+  <link rel="stylesheet" href="componentes/body.css" />
+  <link rel="stylesheet" href="componentes/card.css" />
+  <link rel="stylesheet" href="componentes/footer.css" />
+</head>
+
+<body>
+
+  <header>
+   <div class="logo-area">
+  <h1>Inova Look</h1>
+  <button onclick="abrirFavoritos()" class="favoritos-btn" aria-label="Ver favoritos">
+    <img src="assets/images/img/heart-red.png" alt="Favoritos" style="width: 30px; height: 30px;" />
+  </button>
+     <button onclick="minhaFuncao()" class="icone-btn" style="position: relative;">
+        <img src="assets/images/img/imgCarrinho.jpeg" alt="Carrinho" style="width: 30px; height: 30px;" />
+        <span id="contador-carrinho" style="
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          background-color: red;
+          color: white;
+          font-size: 12px;
+          border-radius: 50%;
+          padding: 2px 6px;
+          display: none;">0</span>
+      </button>
+    </div>
+  </div>
+  </header>
+
+ <section class="banner">
+  <h2>Moda básica com estilo e conforto</h2>
+  <img src="assets/images/img/imgPromo.png" alt="Promoção Camisetas e Regatas" class="banner-secundario">
+</section>
+<section class="filtro-busca" style="text-align: center; margin: 20px 0;">
+  <label for="filtroBusca">Buscar produto:</label>
+  <input
+    type="text"
+    id="filtroBusca"
+    placeholder="Digite o nome do produto"
+    style="padding: 8px; width: 80%; max-width: 400px; border-radius: 5px; border: 1px solid #ccc;" />
+</section>
+
+  
+  <section class="filtro-preco" style="text-align: center; margin: 20px 0;">
+  <label for="filtroPreco">Filtrar por preço:</label>
+  <select id="filtroPreco">
+    <option value="todos">Todos os preços</option>
+    <option value="ate100">Até R$100</option>
+    <option value="100a150">R$100 a R$150</option>
+    <option value="acima150">Acima de R$150</option>
+  </select>
+</section>
+
+<section class="filtro-departamento" style="text-align: center; margin: 20px 0;">
+  <label for="filtroDepartamento">Filtrar por departamento:</label>
+  <select id="filtroDepartamento">
+    <option value="todos">Todos os departamentos</option>
+    <option value="moletom">Moletom</option>
+    <option value="jaqueta">Jaqueta</option>
+    <option value="bermuda">Bermuda</option>
+    <option value="calca">Calça</option>
+    <option value="camisa">Camisa</option>
+  </select>
+</section>
+
+
+<p id="mensagem-vazio" style="text-align:center; display:none;">Nenhum produto encontrado.</p>
+
+  <section id="grid-produtos">
+    <div class="produtos" id="produtos">
+      <!-- Aqui o JS vai criar os cards -->
+    </div>
+  </section>
+  
+  <footer>
+    &copy; 2025 Inova Look. Todos os direitos reservados.
+  </footer>
+
+  <script src="script.js"></script>
+
+  <script>
+  function toggleFavorito(botao) {
+  const img = botao.querySelector('img');
+  const nomeProduto = botao.closest('.card').querySelector('h3').textContent;
+  let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+
+  const isFavorito = botao.getAttribute('data-favorito') === 'true';
+
+  if (!isFavorito) {
+    img.src = 'assets/images/img/heart-red.png';
+    botao.setAttribute('data-favorito', 'true');
+    if (!favoritos.includes(nomeProduto)) {
+      favoritos.push(nomeProduto);
+    }
+  } else {
+    img.src = 'assets/images/img/heart-white.png';
+    botao.setAttribute('data-favorito', 'false');
+    favoritos = favoritos.filter(item => item !== nomeProduto);
+  }
+
+  localStorage.setItem('favoritos', JSON.stringify(favoritos));
+}
+
+    
+   
+    const produtos = [
+      {
+        nome: "Cardigan Creme",
+        preco: "R$89,90",
+        img: "assets/images/img(Fotos)/imgCardiganFem.webp",
+        depart: "moletom",
+        gen: "fem",
+      },
+      {
+        nome: "Cardigan Polo Branco",
+        preco: "R$89,90",
+        img: "assets/images/img(Fotos)/imgCardiganPoloFem.webp",
+        depart: "moletom",
+        gen: "fem",
+      },
+      {
+        nome: "Jaqueta Jeans",
+        preco: "R$119,90",
+        img: "assets/images/img(Fotos)/imgJaquetaJeansFem.webp",
+        depart: "jaqueta",
+        gen: "fem",
+      },
+      {
+        nome: "Jaqueta Puffer Amarelo",
+        preco: "R$199,90",
+        img: "assets/images/img(Fotos)/imgPufferAmareloFem.webp",
+        depart: "jaqueta",
+        gen: "fem",
+      },
+      {
+        nome: "Sweater",
+        preco: "R$99,90",
+        img: "assets/images/img(Fotos)/imgSweaterCinzaFem.webp",
+        depart: "moletom",
+        gen: "fem",
+      },
+      {
+        nome: "Cardigan Polo",
+        preco: "R$99,90",
+        img: "assets/images/img(Fotos)/imgCardiganPoloMasc.png",
+        depart: "moletom",
+        gen: "masc",
+      },
+      {
+        nome: "Jaqueta Branca",
+        preco: "R$139,90",
+        img: "assets/images/img(Fotos)/imgJaquetaBrancaMasc.webp",
+        depart: "jaqueta",
+        gen: "masc",
+      },
+      {
+        nome: "Bermuda de Praia",
+        preco: "R$139,90",
+        img: "assets/images/img(Fotos)/imgBermudaPraiaMasc.webp",
+        depart: "bermuda",
+        gen: "masc",
+      },
+      {
+        nome: "Calça Sarja",
+        preco: "R$139,90",
+        img: "assets/images/img(Fotos)/imgCalcaSarjaMasc.webp",
+        depart: "calca",
+        gen: "masc",
+      },
+      {
+        nome: "Camisa Basica",
+        preco: "R$139,90",
+        img: "assets/images/img(Fotos)/imgCamisaBasicaMasc.webp",
+        depart: "camisa",
+        gen: "masc",
+      },
+    ];
+   
+    const containerProduto = document.getElementById ('produtos');
+    produtos.forEach(produto => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute ('data-departamento', produto.depart);
+
+      card.innerHTML = `
+        <button class="favorito-btn" onclick="toggleFavorito(this)" aria-label="Adicionar aos favoritos"
+          style="position: absolute; top: 10px; right: 10px; background: none; border: none; cursor: pointer; padding: 0;"
+          data-favorito="false">
+          <img src="assets/images/img/heart-white.png" alt="Favoritar" style="width: 24px; height: 24px;" />
+        </button>
+        <img src="${produto.img}" alt="${produto.nome}" />
+        <h3 class="CamisaPreta">${produto.nome}</h3>
+        <div class="preco">${produto.preco}</div>
+        <button class="botao1" onclick="adicionarAoCarrinho('${produto.nome}')">Adicionar ao carrinho</button>
+      `;
+      containerProduto.appendChild(card);
+    });
+
+    function aplicarFiltros() {
+      const termo = document.getElementById('filtroBusca').value.toLowerCase();
+      const departamento = document.getElementById ("filtroDepartamento").value.toLowerCase();
+      const faixa = document.getElementById('filtroPreco').value;
+      const todosOsCards = document.querySelectorAll('.card');
+      let algumVisivel = false;
+
+      todosOsCards.forEach(card => {
+        const nome = card.querySelector('h3').innerText.toLowerCase();
+        const precoTexto = card.querySelector('.preco').innerText.replace('R$', '').replace(',', '.');
+        const preco = parseFloat(precoTexto);
+
+        const departCard = card.getAttribute ('data-departamento');
+
+        const condicaoNome = nome.includes(termo);
+        let condicaoDepartamento = false;
+        let condicaoPreco = false;
+
+        if (faixa === 'todos') condicaoPreco = true;
+        else if (faixa === 'ate100') condicaoPreco = preco <= 100;
+        else if (faixa === '100a150') condicaoPreco = preco > 100 && preco <= 150;
+        else if (faixa === 'acima150') condicaoPreco = preco > 150;
+
+        if (departamento === 'todos') condicaoDepartamento = true;
+        else condicaoDepartamento = departCard === departamento;
+
+        const mostrar = condicaoNome && condicaoPreco && condicaoDepartamento;
+        card.style.display = mostrar ? 'block' : 'none';
+        if (mostrar) algumVisivel = true;
+      });
+
+      document.getElementById('mensagem-vazio').style.display = algumVisivel ? 'none' : 'block';
+    }
+
+    document.getElementById('filtroBusca').addEventListener('input', aplicarFiltros);
+    document.getElementById('filtroPreco').addEventListener('change', aplicarFiltros);
+    document.getElementById('filtroDepartamento').addEventListener('change', aplicarFiltros);
+
+    function abrirFavoritos() {
+  const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+  const lista = document.getElementById('lista-favoritos');
+  lista.innerHTML = '';
+
+  if (favoritos.length === 0) {
+    lista.innerHTML = '<p>Nenhum produto foi favoritado ainda.</p>';
+  } else {
+    favoritos.forEach(nomeProduto => {
+      const produto = produtos.find(p => p.nome === nomeProduto);
+      if (produto) {
+        const item = document.createElement('div');
+        item.className = 'item-carrinho';
+        item.innerHTML = `
+  <img src="${produto.img}" alt="${produto.nome}" />
+  <span>${produto.nome}</span>
+  <button onclick="removerFavorito('${produto.nome}')" class="remover-btn">Remover</button>`;
+        lista.appendChild(item);
+      }
+    });
+  }
+
+  document.getElementById('overlay-favoritos').classList.remove('oculto');
+}
+
+function fecharFavoritos() {
+  document.getElementById('overlay-favoritos').classList.add('oculto');
+  
+}
+function removerFavorito(nomeProduto) {
+  let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+  favoritos = favoritos.filter(item => item !== nomeProduto);
+  localStorage.setItem('favoritos', JSON.stringify(favoritos));
+  abrirFavoritos(); // atualiza o overlay
+
+  // Atualiza o ícone no card (caso ele esteja visível)
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => {
+    const titulo = card.querySelector('h3')?.textContent;
+    if (titulo === nomeProduto) {
+      const botaoFavorito = card.querySelector('.favorito-btn');
+      const img = botaoFavorito.querySelector('img');
+      img.src = 'assets/images/img/heart-white.png';
+      botaoFavorito.setAttribute('data-favorito', 'false');
+    }
+  });
+}
+function removerDoCarrinho(nomeProduto) {
+  let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  carrinho = carrinho.filter(item => item !== nomeProduto);
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+  atualizarContadorCarrinho();
+  minhaFuncao(); // atualiza o overlay após remoção
+}
+
+
+  </script>
+
+  
+<script>
+  function adicionarAoCarrinho(produto) {
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    carrinho.push(produto);
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+    atualizarContadorCarrinho();
+    mostrarOverlayAdicionado();
+  }
+
+  function minhaFuncao() {
+  const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+  const lista = document.getElementById('lista-carrinho');
+  lista.innerHTML = '';
+
+  if (carrinho.length === 0) {
+    lista.innerHTML = '<p>Seu carrinho está vazio.</p>';
+  } else {
+    carrinho.forEach(nomeProduto => {
+      const produto = produtos.find(p => p.nome === nomeProduto);
+      if (produto) {
+        const item = document.createElement('div');
+        item.className = 'item-carrinho';
+       item.innerHTML = `
+  <img src="${produto.img}" alt="${produto.nome}" />
+  <span>${produto.nome}</span>
+  <button onclick="removerDoCarrinho('${produto.nome}')" class="remover-btn">Remover</button>`;
+        lista.appendChild(item);
+    
+      }
+    });
+  }
+
+  document.getElementById('overlay-carrinho').classList.remove('oculto');
+}
+
+  
+
+    document.getElementById('overlay-carrinho').classList.remove('oculto');
+
+
+  function fecharCarrinho() {
+    document.getElementById('overlay-carrinho').classList.add('oculto');
+  }
+
+  function mostrarOverlayAdicionado() {
+    const overlay = document.getElementById('overlay-adicionado');
+    overlay.classList.remove('oculto');
+    setTimeout(() => {
+      overlay.classList.add('oculto');
+    }, 2000); // desaparece após 2 segundos
+  }
+
+  function atualizarContadorCarrinho() {
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+    const contador = document.getElementById('contador-carrinho');
+    if (contador) {
+      contador.textContent = carrinho.length;
+      contador.style.display = carrinho.length > 0 ? 'inline-block' : 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', atualizarContadorCarrinho);
+</script>
+
+<!-- Overlay de confirmação de adição -->
+<div id="overlay-adicionado" class="overlay oculto">
+  <div class="overlay-box sucesso">
+    Produto adicionado ao carrinho!
+  </div>
+</div>
+
+<!-- Overlay de visualização do carrinho -->
+<div id="overlay-carrinho" class="overlay oculto">
+  <div class="overlay-box">
+    <h3>Itens no carrinho:</h3>
+   <div id="lista-carrinho" class="lista-carrinho"></div>
+    <button onclick="fecharCarrinho()" class="botao1">Fechar</button>
+  </div>
+</div>
+
+
+
+
+
+<div id="overlay-favoritos" class="overlay oculto">
+  <div class="overlay-box">
+    <h2>Meus Favoritos</h2>
+    <div id="lista-favoritos" class="lista-carrinho"></div>
+    <button onclick="fecharFavoritos()">Fechar</button>
+  </div>
+</div>
+
+</body>
+
+</html>
